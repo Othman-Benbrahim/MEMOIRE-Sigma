@@ -160,7 +160,7 @@ symbolique de la session, pas résumé. Elle encode la nature de la session
 ```
 
 La table de mapping complète (25 primitives, 4 strates) est embarquée dans le
-skill. Le skill [STÈLE](https://github.com/Othman-Benbrahim) chargé à côté
+skill. Le skill [STÈLE](https://github.com/Othman-Benbrahim/STELE) chargé à côté
 enrichit la lecture des signatures, mais n'est **pas requis**.
 
 ### Détection de motifs inter-sessions
@@ -225,7 +225,7 @@ preuves ni des prédictions.
 MEMOIRE-Σ s'inscrit dans l'écosystème IRIS∞ :
 
 - **[CRC-R](https://github.com/Othman-Benbrahim/CRC-R-Cycle-de-Resonance-Cognitive-Recursif)** — origine du mécanisme mémoriel
-- **STÈLE** — alphabet des 25 primitives, source des signatures
+- **[STÈLE](https://github.com/Othman-Benbrahim/STELE)** — alphabet des 25 primitives, source des signatures
 - Compatible avec tout autre skill : MEMOIRE-Σ archive la session quel que soit
   le travail effectué dedans
 
