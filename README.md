@@ -253,6 +253,8 @@ GPL-3.0
 **Othman BEN BRAHIM**
 [github.com/Othman-Benbrahim](https://github.com/Othman-Benbrahim)
 
+[[Deepwiki](https://deepwiki.com/Othman-Benbrahim/MEMOIRE-Sigma)
+
 ---
 
 *MEMOIRE-Σ v1.1 — Juin 2026*
