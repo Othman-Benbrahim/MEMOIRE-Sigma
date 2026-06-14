@@ -253,7 +253,7 @@ GPL-3.0
 **Othman BEN BRAHIM**
 [github.com/Othman-Benbrahim](https://github.com/Othman-Benbrahim)
 
-[[Deepwiki](https://deepwiki.com/Othman-Benbrahim/MEMOIRE-Sigma)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Othman-Benbrahim/MEMOIRE-Sigma)
 
 ---
 
