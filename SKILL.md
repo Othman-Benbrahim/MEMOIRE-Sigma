@@ -157,10 +157,10 @@ Trois règles, toutes vérifiables :
    chaîne qui rompt cet ordre est invalide.
 2. **Comptes** : au moins une substance, au plus trois ; au plus deux opératives ;
    au plus deux modales ; six glyphes au total.
-3. **Modale attachée** — une modale placée immédiatement après une opérative la
-   qualifie, au lieu de qualifier la session entière. Elle se transcrit alors entre
-   crochets : `⟁↻` → `FRACTURER[CYCLE]`, « un blocage récurrent a été cassé ». Une
-   modale en fin de chaîne qualifie la session entière.
+3. **Les modales qualifient la session entière**, jamais un glyphe en particulier.
+   Elles se placent en fin de chaîne et se transcrivent comme les autres, séparées par
+   un point. Pas de notation entre crochets : une modale attachée à un seul glyphe
+   serait indiscernable d'une modale finale, et rendrait la chaîne ambiguë.
 
 Les délimiteurs `⟦ ⟧` sont obligatoires, et le statut suit la chaîne fermante.
 
@@ -222,7 +222,7 @@ VIDE.RÉVÉLER.INVERSER.CONDITIONNEL
 Reprise sur blocage récurrent, cassé pendant la session :
 ```
 ⟦◊⊛◯⟁↻⟧ Clos
-TRACE.NOEUD.FORME.FRACTURER[CYCLE]
+TRACE.NOEUD.FORME.FRACTURER.CYCLE
 ```
 
 ---
