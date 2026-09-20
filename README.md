@@ -157,9 +157,8 @@ accompli (opératives), et sa configuration (modales).
 ⟦ [1-3 substances] [1-2 opératives] [0-2 modales] ⟧   —   2 à 6 glyphes
 ```
 
-L'ordre des strates est strict. Une modale placée juste après une opérative la
-qualifie et se transcrit entre crochets — `⟁↻` → `FRACTURER[CYCLE]` — au lieu de
-qualifier la session entière.
+L'ordre des strates est strict, et les modales, toujours en fin de chaîne, qualifient
+la session entière.
 
 ```
 ⟦⊙∿◯⊜⟧ Clos       → objectif clair, travail, livrable, session aboutie
@@ -248,7 +247,7 @@ v1.0 ✓  Extraction du mécanisme CRC-R, généralisation tout domaine
 v1.1 ✓  Intégration corpus scientifiques (I-PASS, LLM memory, boundary objects)
 v1.1.1 ✓ Grammaire de signature rendue vérifiable : 1-3 substances (la règle
         annonçait 1-2, que trois exemples sur quatre violaient), ordre des
-        strates strict, modale attachée documentée, plafond à 6 glyphes.
+        strates strict, notation entre crochets retirée (ambiguë), plafond à 6 glyphes.
         SKILL.md aligné sur les champs v1.1 du bloc.
 v1.2    Validation en conditions réelles — mesure des taux d'omission
         à la restauration, ajustement du budget
