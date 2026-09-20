@@ -149,19 +149,29 @@ parsable par machine, sans représentation JSON séparée (principe du
 
 ### Signature STÈLE
 
-Chaque bloc se clôt par une signature glyphique de 3 à 12 signes — coordonnée
-symbolique de la session, pas résumé. Elle encode la nature de la session
-(substances), ce qui s'est accompli (opératives), et sa configuration (modales).
+Chaque bloc se clôt par une signature glyphique — coordonnée symbolique de la
+session, pas résumé. Elle encode la nature de la session (substances), ce qui s'est
+accompli (opératives), et sa configuration (modales).
+
+```
+⟦ [1-3 substances] [1-2 opératives] [0-2 modales] ⟧   —   2 à 6 glyphes
+```
+
+L'ordre des strates est strict. Une modale placée juste après une opérative la
+qualifie et se transcrit entre crochets — `⟁↻` → `FRACTURER[CYCLE]` — au lieu de
+qualifier la session entière.
 
 ```
 ⟦⊙∿◯⊜⟧ Clos       → objectif clair, travail, livrable, session aboutie
 ⟦Ø✶⥀◐⟧ Bifurqué   → exploration, découverte, changement de cap, suspendue
-⟦◊⊛⟁↻◯⟧ Clos      → reprise, nœud récurrent, blocage cassé, forme produite
+⟦◊⊛◯⟁↻⟧ Clos      → reprise, nœud, forme produite, blocage récurrent cassé
 ```
 
-La table de mapping complète (25 primitives, 4 strates) est embarquée dans le
-skill. Le skill [STÈLE](https://github.com/Othman-Benbrahim/STELE) chargé à côté
-enrichit la lecture des signatures, mais n'est **pas requis**.
+La table embarquée dans le skill compte **20 primitives en 3 strates**
+(8 substances, 7 opératives, 5 modales) — un sous-ensemble de l'alphabet STÈLE
+restreint à ce qui décrit une session de travail. Le skill
+[STÈLE](https://github.com/Othman-Benbrahim/STELE) et ses 25 primitives, chargé à
+côté, enrichit la lecture des signatures, mais n'est **pas requis**.
 
 ### Détection de motifs inter-sessions
 
@@ -225,7 +235,7 @@ preuves ni des prédictions.
 MEMOIRE-Σ s'inscrit dans l'écosystème IRIS∞ :
 
 - **[CRC-R](https://github.com/Othman-Benbrahim/CRC-R-Cycle-de-Resonance-Cognitive-Recursif)** — origine du mécanisme mémoriel
-- **[STÈLE](https://github.com/Othman-Benbrahim/STELE)** — alphabet des 25 primitives, source des signatures
+- **[STÈLE](https://github.com/Othman-Benbrahim/STELE)** — alphabet des 25 primitives, dont MEMOIRE-Σ retient 20
 - Compatible avec tout autre skill : MEMOIRE-Σ archive la session quel que soit
   le travail effectué dedans
 
@@ -236,6 +246,10 @@ MEMOIRE-Σ s'inscrit dans l'écosystème IRIS∞ :
 ```
 v1.0 ✓  Extraction du mécanisme CRC-R, généralisation tout domaine
 v1.1 ✓  Intégration corpus scientifiques (I-PASS, LLM memory, boundary objects)
+v1.1.1 ✓ Grammaire de signature rendue vérifiable : 1-3 substances (la règle
+        annonçait 1-2, que trois exemples sur quatre violaient), ordre des
+        strates strict, modale attachée documentée, plafond à 6 glyphes.
+        SKILL.md aligné sur les champs v1.1 du bloc.
 v1.2    Validation en conditions réelles — mesure des taux d'omission
         à la restauration, ajustement du budget
 v2.0    (Exploratoire) Agrégation de journal : rapport de trajectoire
@@ -257,4 +271,5 @@ GPL-3.0
 
 ---
 
-*MEMOIRE-Σ v1.1 — Juin 2026*
+*MEMOIRE-Σ v1.1.1 — Septembre 2026*
+
