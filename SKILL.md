@@ -1,6 +1,6 @@
 ---
 name: memoire-sigma
-version: 1.0
+version: 1.1
 description: >
   MEMOIRE-Σ — Compression et restauration automatique de session, tout domaine.
   Généralise le sous-système mémoriel du CRC-R (Étape 0A + Étape 6) hors du cycle
@@ -107,9 +107,13 @@ Acquis     :
   - [fait ou livrable, télégraphique]
   - [...]
 Décisions  :
-  - [choix] — [raison courte]
+  - [choix] — [raison courte] (écarté : [alternative])
 Ouvert     :
-  - [tâche ou question non résolue]
+  - [!] [tâche ou question non résolue — critique]
+  - [*] [importante]
+  - [ ] [secondaire]
+Contingence: [si condition, alors action] — si un risque est identifié
+Sources    : [fichiers, URLs mobilisés] — si pertinent
 Prochain   : [l'étape suivante convenue, 1 ligne]
 Signature  : ⟦[chaîne STÈLE]⟧ [statut]
 Mots-codes : [transcription verbale de la chaîne]
@@ -117,15 +121,48 @@ Feedback   : [vide — rempli par l'utilisateur après session]
 ===============
 ```
 
-**Budget : ≤ 150 tokens.** Si le bloc dépasse, comprimer les acquis avant
-les ouvertures — ce qui est acquis se redécouvre, ce qui est ouvert se perd.
+Champs obligatoires : Date, Domaine, Objet, Acquis, Décisions, Ouvert, Prochain,
+Signature, Mots-codes. `Contingence` n'apparaît que si un risque est identifié,
+`Sources` que si des fichiers ou URLs ont été mobilisés, `Feedback` est laissé vide
+à la production.
+
+**Budget : ≤ 200 tokens.**
+
+**Ordre de sacrifice** en cas de dépassement, dans cet ordre strict :
+
+1. `Sources`
+2. les alternatives écartées dans `Décisions`
+3. les acquis les plus anciens
+
+**Jamais les `[!]` ni la contingence.** Ce qui est acquis se redécouvre ; ce qui est
+critique, perdu, coûte la session suivante.
 
 ---
 
 ## Signature STÈLE de session
 
 Adaptation de la table CRC-R aux sessions de travail générales.
-Structure : `⟦ [1-2 substances] [1-2 opératives] [0-2 modales] ⟧` — max 12 signes.
+**20 primitives en 3 strates** — sous-ensemble de l'alphabet STÈLE (25 primitives),
+restreint à ce qui décrit une session de travail.
+
+### Grammaire
+
+```
+⟦ [1-3 substances] [1-2 opératives] [0-2 modales] ⟧   —   2 à 6 glyphes
+```
+
+Trois règles, toutes vérifiables :
+
+1. **Ordre des strates strict** : substances, puis opératives, puis modales. Une
+   chaîne qui rompt cet ordre est invalide.
+2. **Comptes** : au moins une substance, au plus trois ; au plus deux opératives ;
+   au plus deux modales ; six glyphes au total.
+3. **Modale attachée** — une modale placée immédiatement après une opérative la
+   qualifie, au lieu de qualifier la session entière. Elle se transcrit alors entre
+   crochets : `⟁↻` → `FRACTURER[CYCLE]`, « un blocage récurrent a été cassé ». Une
+   modale en fin de chaîne qualifie la session entière.
+
+Les délimiteurs `⟦ ⟧` sont obligatoires, et le statut suit la chaîne fermante.
 
 ### Substances (ce qu'était la session)
 
@@ -184,8 +221,8 @@ VIDE.RÉVÉLER.INVERSER.CONDITIONNEL
 
 Reprise sur blocage récurrent, cassé pendant la session :
 ```
-⟦◊⊛⟁↻◯⟧ Clos
-TRACE.NOEUD.FRACTURER[CYCLE].FORME
+⟦◊⊛◯⟁↻⟧ Clos
+TRACE.NOEUD.FORME.FRACTURER[CYCLE]
 ```
 
 ---
@@ -224,3 +261,4 @@ La granularité est la session ; l'agrégation se fait par la lecture du journal
 **Honnêteté épistémique** — héritée du CRC-R : ce skill modélise une mémoire
 de travail externalisée. Les signatures STÈLE sont des coordonnées symboliques,
 pas des preuves ni des prédictions.
+
